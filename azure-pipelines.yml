@@ -42,7 +42,14 @@ jobs:
       targetType: 'inline'
       script: |
         # Write your commands here
-        touch file1.txt'
-        echo file1.txt'
         echo 'Hello world'
+        cat > /file.txt << ENDOFFILE
+        My File, My Choice
+        I have the right to write what I want in this file
+        and no NSA can stop me from doing it.
+            I had privacy before NSA and the whole internet
+        and now I'm just a tiny little book that was read
+        by everyone....
+        ENDOFFILE
+        echo /file.txt
 
