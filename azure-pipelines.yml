@@ -37,12 +37,10 @@ jobs:
   - task: CmdLine@2
     inputs:
       script: 'echo file1.txt'
-  - task: Bash@3
+  - task: AzureFileCopy@4
     inputs:
-      targetType: 'inline'
-      script: |
-        # Write your commands here
-        echo 'Hello world'
-        cat > "/home/vsts/work/_temp/file.txt"
-        echo file.txt
-
+      SourcePath: 'https://github.com/cbao97/cbao97.github.io/raw/master/public/logo512.png'
+      azureSubscription: 'Azure for Students(29bcf877-4a60-4481-960b-8992ebdcfdc6)'
+      Destination: 'AzureBlob'
+      storage: 'sadcbao'
+      ContainerName: 'test'
