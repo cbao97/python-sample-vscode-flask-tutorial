@@ -37,4 +37,11 @@ jobs:
   - task: CmdLine@2
     inputs:
       script: 'echo file1.txt'
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Write your commands here
+        
+        echo 'Hello world'
 
