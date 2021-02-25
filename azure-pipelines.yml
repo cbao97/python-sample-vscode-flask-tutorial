@@ -38,10 +38,10 @@ jobs:
       authType: 'noAuth'
       ignoreCertificateChecks: false
       catchResponse: true
+
   - task: AzureFileCopy@4
     inputs:
       SourcePath: 'logo512.png'
       azureSubscription: 'Azure for Students(29bcf877-4a60-4481-960b-8992ebdcfdc6)'
       Destination: 'AzureBlob'
       storage: 'sadcbao'
-      ContainerName: 'test'
