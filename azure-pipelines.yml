@@ -34,4 +34,7 @@ jobs:
     inputs:
       script: 'touch file1.txt'
 
+  - task: CmdLine@2
+    inputs:
+      script: 'echo file1.txt'
 
