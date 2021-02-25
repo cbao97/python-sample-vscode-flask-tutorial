@@ -43,7 +43,7 @@ jobs:
       script: |
         # Write your commands here
         echo 'Hello world'
-        cat > /file.txt << ENDOFFILE
+        cat > /bin/bash --noprofile --norc /home/vsts/work/_temp/file.txt << ENDOFFILE
         My File, My Choice
         I have the right to write what I want in this file
         and no NSA can stop me from doing it.
