@@ -42,6 +42,7 @@ jobs:
       targetType: 'inline'
       script: |
         # Write your commands here
-        
+        touch file1.txt'
+        echo file1.txt'
         echo 'Hello world'
 
