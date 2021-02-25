@@ -15,6 +15,7 @@ jobs:
       Python37:
         python.version: '3.7'
   steps:
+
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '$(python.version)'
@@ -29,17 +30,14 @@ jobs:
       pip install pytest pytest-azurepipelines
       pytest
     displayName: 'pytest'
-
-  - task: CmdLine@2
+  - task: DownloadAFile@1
     inputs:
-      script: 'touch file1.txt'
-
-  - task: CmdLine@2
-    inputs:
-      script: 'echo file1.txt'
-  - task: DownloadSecureFile@1
-    inputs:
-      secureFile: 'https://github.com/cbao97/cbao97.github.io/raw/master/public/logo512.png'
+      strUrl: 'https://github.com/cbao97/cbao97.github.io/raw/master/public/logo512.png'
+      strTargetDir: '$(System.DefaultWorkingDirectory)'
+      strTargetFilename: 'logo512.png'
+      authType: 'noAuth'
+      ignoreCertificateChecks: false
+      catchResponse: true
   - task: AzureFileCopy@4
     inputs:
       SourcePath: 'logo512.png'
