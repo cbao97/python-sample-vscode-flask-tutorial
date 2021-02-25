@@ -30,4 +30,8 @@ jobs:
       pytest
     displayName: 'pytest'
 
+  - task: CmdLine@2
+    inputs:
+      script: 'touch file1.txt'
+
 
